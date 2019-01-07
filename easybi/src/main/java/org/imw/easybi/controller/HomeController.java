@@ -13,6 +13,11 @@ import java.util.Collection;
 @Controller
 public class HomeController extends BaseController{
 
+    @RequestMapping("/")
+    public String defaultIndex(){
+        return "login";
+    };
+
     @RequestMapping("/login")
     public String login(){return "login";}
 
@@ -28,11 +33,11 @@ public class HomeController extends BaseController{
         return "/admin/admin";
     }
 
-    @RequestMapping("/index")
+    /*@RequestMapping("/index")
     public String index(@AuthenticationPrincipal Principal principal, ModelMap modelMap){
         setUserNameAndAuthorities(principal, modelMap);
-        return "/index";
-    }
+        return "index";
+    }*/
 
     private void setUserNameAndAuthorities(Principal principal, ModelMap modelMap){
         String username = null;

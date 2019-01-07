@@ -29,7 +29,7 @@ public class WebSercurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin().loginPage("/login").defaultSuccessUrl("/user")
                 //1.自定义参数名称，与login.html中的参数对应
-                .usernameParameter("myusername").passwordParameter("mypassword")
+                .usernameParameter("username").passwordParameter("password")
                 .and()
                 .logout().logoutUrl("/logout").logoutSuccessUrl("/login");
     }

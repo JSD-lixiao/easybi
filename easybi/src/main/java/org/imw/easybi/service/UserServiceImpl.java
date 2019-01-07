@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
         UUID uuid = UUID.randomUUID();
         user.setActivationCode(uuid.toString());
         user.setStatus("0");
-        MailUtil.send_mail(user);
+//        MailUtil.send_mail(user);
         return userDao.save(user);
     }
 }
