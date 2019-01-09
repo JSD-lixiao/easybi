@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <script src="js/axios.min.js"></script>
+</head>
+<body >
+<div id="app">
+    username:<input type="text" v-model.lazy.trim="user.username">
+    password:<input type="password" v-model.lazy.trim="user.password">
+    <input type="button" @click="register" value="register">
+</div>
+</body>
+<script>
+    // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+   var vm = new Vue({
+        el:"#app",
+        data:{
+            user:{
+                username:"",
+                password:""
+            }
+        },
+        methods:{
+            register:function (event) {
+                var params = new URLSearchParams();
+                axios({
+                    method:'post',
+                    url:'user/addUser',
+                    data:this.user
+                }).then(function(res){
+                    console.log(res);
+                });
+            }
+        }
+    });
+</script>
+</html>

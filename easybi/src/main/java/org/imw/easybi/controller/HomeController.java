@@ -27,6 +27,10 @@ public class HomeController extends BaseController{
         return "/user/user";
     }
 
+    @RequestMapping("/register")
+    public String register(){
+        return "userManage";
+    }
     @RequestMapping("/admin")
     public String admin(@AuthenticationPrincipal Principal principal, ModelMap modelMap){
         setUserNameAndAuthorities(principal, modelMap);

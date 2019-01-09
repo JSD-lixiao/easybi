@@ -32,29 +32,36 @@ public class User implements UserDetails {
     private String status;//是否已激活
     @Column
     private String activationCode;//激活码
+    @Column(nullable = false)
+    private String roles;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        String[] authorities = roles.split(",");
+        List<SimpleGrantedAuthority> simpleGrantedAuthorities = new ArrayList<>();
+        for (String role : authorities) {
+            simpleGrantedAuthorities.add(new SimpleGrantedAuthority(role));
+        }
+        return simpleGrantedAuthorities;
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 }
