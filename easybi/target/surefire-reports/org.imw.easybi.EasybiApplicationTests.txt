@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.imw.easybi.EasybiApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.017 s - in org.imw.easybi.EasybiApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.671 s - in org.imw.easybi.EasybiApplicationTests

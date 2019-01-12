@@ -22,7 +22,7 @@ public class DbUserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userDao.findByUsername(username);
-        System.out.println("dbUserDetailService====>"+user.toString());
+        System.out.println(user.getUsername()+" has founded......");
         if(user==null){
             throw new UsernameNotFoundException("user not found");
         }

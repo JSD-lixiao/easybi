@@ -1,5 +1,7 @@
 package org.imw.easybi.controller;
 
+import org.imw.easybi.pojo.User;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -20,6 +22,12 @@ public class HomeController extends BaseController{
 
     @RequestMapping("/login")
     public String login(){return "login";}
+
+    @RequestMapping("/index")
+    public String index(@AuthenticationPrincipal Principal principal, ModelMap modelMap){
+        setUserNameAndAuthorities(principal, modelMap);
+        return "starter";
+    }
 
     @RequestMapping("/user")
     public String user(@AuthenticationPrincipal Principal principal, ModelMap modelMap){

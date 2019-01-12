@@ -29,10 +29,10 @@ public class WebSercurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
-                .antMatchers("/user/**").hasRole("USER")
+                .antMatchers("/user/**","/index").hasRole("USER")
                 .antMatchers("/admin/**","/register").hasRole("ADMIN")
                 .and()
-                .formLogin().loginPage("/login").defaultSuccessUrl("/user")
+                .formLogin().loginPage("/login").defaultSuccessUrl("/index")
                 //1.自定义参数名称，与login.html中的参数对应
                 .usernameParameter("username").passwordParameter("password")
                 .and()
