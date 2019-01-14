@@ -28,8 +28,6 @@ public class UserController extends BaseController {
 
     @PostMapping("getClient")
     public Object getClient(){
-        logger.info("getClient has runned");
-        logger.info(SecurityContextHolder.getContext().getAuthentication().getPrincipal());
        return SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
     }

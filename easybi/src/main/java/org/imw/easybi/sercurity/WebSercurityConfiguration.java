@@ -41,8 +41,8 @@ public class WebSercurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and().csrf().disable();
     }
 
-    /*@Override
+    @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/static/**");
-    }*/
+        web.ignoring().antMatchers("/static/**","index.html");
+    }
 }

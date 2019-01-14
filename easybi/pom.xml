@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.imw</groupId>
-    <artifactId>easybi</artifactId>
+    <artifactId>easyBI</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>easybi</name>
     <description>Demo project for Spring Boot</description>
@@ -22,12 +22,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <exclusions>
+         <!--   <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-logging</artifactId>
                 </exclusion>
-            </exclusions>
+            </exclusions>-->
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -140,14 +140,14 @@
                 </configuration>
             </plugin>
         </plugins>
-       <resources>
+     <resources>
             <resource>
                 <directory>src/main/resources</directory>
-                <filtering>false</filtering>
+               <!-- <filtering>false</filtering>
                 <includes>
                     <include>static/**</include>
                     <include>templates/**</include>
-                </includes>
+                </includes>-->
             </resource>
         </resources>
     </build>
